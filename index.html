@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khalil Jackson</title>
+    <link rel="stylesheet" href="design.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
@@ -12,21 +13,160 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Java File -->
+     <script src="script.js"></script>
+
+    <style>
+      
+      #nameplate {
+        color: aliceblue;
+      }
+
+      #honors {
+        color: rgb(255, 228, 20);
+      }
+
+      #p1{
+        font-size: large;
+      }
+      #resline1 {
+        position: absolute;
+        font-size: 25px;
+        text-align: center;
+        
+      }
+
+      h1{
+        display: inline;
+        margin: 8px;
+      }  
+      h3 {
+        display: inline;
+        margin: 0%;
+      }
+
+      
+      .bg-1 {
+        background-color: #ff3b3b; /* Red background */
+        padding-top: 100px;
+        padding-bottom: 120px;
+
+      }
+      .bg-2 {
+        background-color: rgb(159, 160, 160);
+        padding-top: 70px;
+        padding-bottom: 70px;
+        padding-left: 100px;
+        padding-right: 100px;
+      }
+
+      .bg-3 {
+        padding-top: 70px;
+        padding-bottom: 70px;
+      }
+      .bg-4 {
+        color: aliceblue;
+        padding-top: 100px;
+        padding-bottom: 100px;
+        background-color: black;
+      }
+      body{
+        font-family:monospace ;
+      }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
           <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
             <a class="navbar-brand">Khalil Jackson</a>
           </div>
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="About.html">About</a></li>
-            <li><a href="Contact info.html">Contact</a></li>
-            
-          </ul>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right" id="navbar">
+              <li><a href="#Home">Home</a></li>
+              <li><a href="#About">About</a></li>
+              <li><a href="#Contact">Contact</a></li>
+            </ul>
+          </div>
         </div>
-      </nav>    
+    </nav> 
+
+    <!-- Headshot and container -->   
+    <div class="container-fluid bg-1 text-center" id="Home">
+      <h1>I am</h1> 
+      <h1 id="nameplate">Khalil Jackson</h1> 
+      <h1>from Atlanta, Ga</h1> 
+      <br><br>
+      <img src="IMG_7380.jpeg" class="img-thumbnail" style="width: 50%; max-width: 100%; height: auto; display: block; margin: 0 auto;">
+      <br><br><br>
+      <h3>Current</h3>
+      <h3 id="honors"> Honors Scholar</h3>
+      <h3>At Kennesaw University Pursuing a Bachelors of Science in</h3>
+      <h3 id="information">Information Technology</h3>
+
+    </div>
+    <!-- About me -->
+    <div class="container-fluid bg-2 text-center" id="About">
+      <h2 class="section-header">Who Am I?</h2>
+      <br><br><br>
+      <div class="row">
+          <!-- Resume Image -->
+          <div class="col-sm-4">
+            <h3 id="resline">Check Out My Resume!</h3>
+            <br><br><br><br>
+            <img src="2.10.2025 Resume. No Info-1.png" alt="Resume" class="img-repsonsive" style="width: 100%;">
+          </div>
+          <!-- Text Section -->
+          <div class="col-sm-4 col-sm-offset-4">
+            <br>
+            <h3>About Me</h3>
+            <br><br><br>
+            <p id="p1">I am an enthusiastic and driven Information Technology Sophomore at Kennesaw State University with a passion for leveraging technology to solve real-world problems. I bring a diverse skill set to the table, having honed my leadership abilities as the Master of Ceremonies for Clayton County CTAE ceremony in 2023. As an honors student, I consistently demonstrate exceptional soft skills, including communication, teamwork, and adaptability.</p>
+
+            <p id="p1">In addition to my academic achievements, I have a strong background in management and operations, gained through my experience as an Area Supervisor at Chick-fil-A. In this role, I developed expertise in team leadership, customer service, and organizational efficiency. I have also contributed my skills to the community as a Program Supervisor in the Parks and Recreation sector, where I played a key role in enhancing recreational programs and community engagement.</p>
+      
+            <p id="p1">I am passionate about harnessing technology's power to create innovative solutions and eager to explore opportunities that allow me to further develop my technical skills and contribute meaningfully to the IT industry. Let's connect and explore how my unique background and enthusiasm can add value to your team or project.</p>
+          </div>
+      </div>
+    </div>  
+       
+    <!-- Contact Info -->
+    <div class="container-fluid bg-3 text-center" id="Contact">
+      <h3>Where to Find Me</h3>
+      <div class="row">
+        <div class="col-sm-4">
+          <p>LinkedIn</p>
+          <a href="https://www.linkedin.com/in/khaliljackson2005/">
+          <img src="icons8-linkedin-144.png" alt="linkedIn-png">
+          </a>
+        </div>
+        <div class="col-sm-4">
+          <p>handshake</p> 
+          <a href="https://kennesaw.joinhandshake.com/profiles/rwufvk">
+          <img src="icons8-handshake-100.png" alt="handshake-png" style="width: 30%;">
+          </a>
+        </div>
+        <div class="col-sm-4">
+          <p>Merit</p>
+          <a href="https://meritpages.com/Khalil-Jackson/8178900">
+          <img src="icons8-m-100.png" alt="email-png" style="width: 30%;">
+          </a>
+        </div>
+      </div>
+      <br><br>
+      <h4>Email:</h4>
+      <h4>Jacksonkhalil05@gmail.com</h4>
+    </div>
+    <!-- Footer -->
+    <footer class="container-fluid bg-4 text-center">
+      <p>Website made by Khalil Jackson on Github</p>
+    </footer>
 </body>
 </html>
