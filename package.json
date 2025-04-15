@@ -1,0 +1,23 @@
+{
+  "name": "web-dev-project",
+  "version": "1.0.0",
+  "description": "Hey this is my web development project for Kennesaw State univeristy.  This file contains HTML, CSS, and Javascript to make a functional website.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KHALIL-P-JACKSON/Web-Dev-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KHALIL-P-JACKSON/Web-Dev-Project/issues"
+  },
+  "homepage": "https://github.com/KHALIL-P-JACKSON/Web-Dev-Project#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

@@ -1,3 +1,4 @@
+//Smooth Scrolling
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('nav ul li a').forEach(anchor => {
         anchor.addEventListener("click", function (event) {
