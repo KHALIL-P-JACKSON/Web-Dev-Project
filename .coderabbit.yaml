@@ -1,0 +1,39 @@
+language: "en-US"
+early_access: false
+reviews:
+  profile: "chill"
+  request_changes_workflow: false
+  high_level_summary: true
+  poem: false
+  review_status: true
+  collapse_walkthrough: false
+  auto_review:
+    enabled: true
+    drafts: false
+  path_filters:
+    - "!dist/**"
+    - "!node_modules/**"
+    - "!*.md"
+  path_instructions:
+    - path: "src/**"
+      instructions: "Focus on React best practices, TypeScript types, and code quality. Ensure components are properly structured and hooks are used correctly."
+    - path: "*.ts"
+      instructions: "Check for proper TypeScript usage, type safety, and adherence to the project's coding standards."
+    - path: "*.js"
+      instructions: "Ensure modern JavaScript practices and consider migration to TypeScript if appropriate."
+chat:
+  auto_reply: true
+github_checks:
+  annotations: true
+auto_label:
+  ignore:
+    - "dependencies"
+  label_instructions:
+    - name: "enhancement"
+      instructions: "Add this label if the PR introduces new features or improvements"
+    - name: "bug"
+      instructions: "Add this label if the PR fixes a bug"
+    - name: "documentation"
+      instructions: "Add this label if the PR updates documentation"
+    - name: "refactor"
+      instructions: "Add this label if the PR refactors existing code without changing functionality"
