@@ -4,9 +4,9 @@
   "description": "Hey this is my web development project for Kennesaw State univeristy.  This file contains HTML, CSS, and Javascript to make a functional website.",
   "main": "app.js",
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/app.js",
-    "dev": "tsc && node dist/app.js",
+    "build": "tsc -p tsconfig.json",
+    "start": "node app.js",
+    "dev": "tsc -p tsconfig.json && node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
