@@ -26,11 +26,6 @@ reviews:
       instructions: "Ensure modern JavaScript practices and consider migration to TypeScript if appropriate."
 chat:
   auto_reply: true
-github_checks:
-  annotations: true
-auto_label:
-  ignore:
-    - "dependencies"
   label_instructions:
     - name: "enhancement"
       instructions: "Add this label if the PR introduces new features or improvements"
