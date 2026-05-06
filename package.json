@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/KHALIL-P-JACKSON/Web-Dev-Project/issues"
   },
-  "homepage": "https://github.com/KHALIL-P-JACKSON/Web-Dev-Project#readme",
+  "homepage": "https://KHALIL-P-JACKSON.github.io/Web-Dev-Project/",
   "dependencies": {
     "@radix-ui/themes": "^3.3.0",
     "express": "^5.1.0",
