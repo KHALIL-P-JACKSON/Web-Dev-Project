@@ -22,21 +22,21 @@ function ContactSection() {
           <SocialLink
             name="LinkedIn"
             href="https://www.linkedin.com/in/khaliljackson2005/"
-            image="/icons8-linkedin-144.png"
+            image={`${import.meta.env.BASE_URL}icons8-linkedin-144.png`}
             alt="LinkedIn"
           />
 
           <SocialLink
             name="Handshake"
             href="https://kennesaw.joinhandshake.com/profiles/rwufvk"
-            image="/icons8-handshake-100.png"
+            image={`${import.meta.env.BASE_URL}icons8-handshake-100.png`}
             alt="Handshake"
           />
 
           <SocialLink
             name="Merit"
             href="https://meritpages.com/Khalil-Jackson/8178900"
-            image="/icons8-m-100.png"
+            image={`${import.meta.env.BASE_URL}icons8-m-100.png`}
             alt="Merit"
           />
         </Flex>

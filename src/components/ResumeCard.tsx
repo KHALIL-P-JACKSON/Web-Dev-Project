@@ -14,7 +14,7 @@ function ResumeCard() {
           }}
         >
           <img
-            src="/resume.png"
+            src={`${import.meta.env.BASE_URL}resume.png`}
             alt="Resume"
             style={{
               width: '100%',

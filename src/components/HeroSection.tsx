@@ -24,7 +24,7 @@ function HeroSection() {
           {/* Image */}
           <Box>
             <img
-              src="/IMG_7380.jpeg"
+              src={`${import.meta.env.BASE_URL}IMG_7380.jpeg`}
               alt="Khalil Jackson"
               style={{
                 width: '50%',
