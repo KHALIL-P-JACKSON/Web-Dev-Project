@@ -5,7 +5,7 @@ reviews:
   request_changes_workflow: true
   high_level_summary: true
   poem: false
-  review_status: true
+  review_status: false
   collapse_walkthrough: false
   auto_review:
     enabled: true
@@ -26,12 +26,3 @@ reviews:
       instructions: "Ensure modern JavaScript practices and consider migration to TypeScript if appropriate."
 chat:
   auto_reply: true
-  label_instructions:
-    - name: "enhancement"
-      instructions: "Add this label if the PR introduces new features or improvements"
-    - name: "bug"
-      instructions: "Add this label if the PR fixes a bug"
-    - name: "documentation"
-      instructions: "Add this label if the PR updates documentation"
-    - name: "refactor"
-      instructions: "Add this label if the PR refactors existing code without changing functionality"
