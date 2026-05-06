@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import { Box, Container, Flex, Heading } from '@radix-ui/themes';
 
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
@@ -64,7 +65,7 @@ function Navbar() {
   );
 }
 
-const linkStyle: React.CSSProperties = {
+const linkStyle: CSSProperties = {
   textDecoration: 'none',
   color: 'white',
   fontWeight: 500,
