@@ -11,7 +11,8 @@ reviews:
     enabled: true
     drafts: false
     base_branches:
-      - "*"
+      - main 
+      - develop
   path_filters:
     - "!dist/**"
     - "!node_modules/**"
