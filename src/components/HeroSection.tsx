@@ -1,40 +1,61 @@
+import { Box, Container, Flex, Heading, Text } from '@radix-ui/themes';
+
 function HeroSection() {
   return (
-    <div className="container-fluid bg-1 text-center" id="Home">
-      <h1>I am</h1>
+    <Box id="Home" className="hero-bg">
+      <Container size="4">
+        <Flex
+          direction="column"
+          align="center"
+          justify="center"
+          gap="4"
+          py="9"
+          style={{ textAlign: 'center' }}
+        >
+          {/* Intro */}
+          <Text size="5">I am</Text>
 
-      <h1 id="nameplate">Khalil Jackson</h1>
+          <Heading size="9" color="red">
+            Khalil Jackson
+          </Heading>
 
-      <h1>from Atlanta, Ga</h1>
+          <Text size="5">from Atlanta, GA</Text>
 
-      <br />
-      <br />
+          {/* Image */}
+          <Box>
+            <img
+              src="/IMG_7380.jpeg"
+              alt="Khalil Jackson"
+              style={{
+                width: '50%',
+                maxWidth: '3200px',
+                height: 'auto',
+                borderRadius: '12px',
+                display: 'block',
+                margin: '0 auto',
+              }}
+            />
+          </Box>
 
-      <img
-        src="/IMG_7380.jpeg"
-        className="img-thumbnail"
-        alt="Khalil Jackson"
-        style={{
-          width: '50%',
-          maxWidth: '100%',
-          height: 'auto',
-          display: 'block',
-          margin: '0 auto',
-        }}
-      />
+          {/* Education Section */}
+          <Box mt="6">
+            <Text size="4">Current</Text>
 
-      <br />
-      <br />
-      <br />
+            <Heading size="6" mt="2">
+              Honors Scholar
+            </Heading>
 
-      <h3>Current</h3>
+            <Text size="4" mt="2">
+              At Kennesaw State University pursuing a Bachelor of Science in
+            </Text>
 
-      <h3 id="honors">Honors Scholar</h3>
-
-      <h3>At Kennesaw University Pursuing a Bachelors of Science in</h3>
-
-      <h3 id="information">Information Technology</h3>
-    </div>
+            <Heading size="5" mt="2">
+              Information Technology
+            </Heading>
+          </Box>
+        </Flex>
+      </Container>
+    </Box>
   );
 }
 

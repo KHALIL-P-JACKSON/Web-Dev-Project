@@ -1,20 +1,30 @@
+import { Box, Card, Flex, Heading } from '@radix-ui/themes';
+
 function ResumeCard() {
   return (
-    <>
-      <h3 id="resline">Check Out My Resume!</h3>
+    <Card size="3">
+      <Flex direction="column" align="center" gap="4">
+        <Heading size="5">Check Out My Resume!</Heading>
 
-      <br />
-      <br />
-      <br />
-      <br />
-
-      <img
-        src="/resume.png"
-        alt="Resume"
-        className="img-responsive"
-        style={{ width: '100%' }}
-      />
-    </>
+        <Box
+          style={{
+            width: '100%',
+            overflow: 'hidden',
+            borderRadius: '12px',
+          }}
+        >
+          <img
+            src="/resume.png"
+            alt="Resume"
+            style={{
+              width: '100%',
+              height: 'auto',
+              display: 'block',
+            }}
+          />
+        </Box>
+      </Flex>
+    </Card>
   );
 }
 
