@@ -24,7 +24,9 @@
   },
   "homepage": "https://github.com/KHALIL-P-JACKSON/Web-Dev-Project#readme",
   "dependencies": {
+    "@radix-ui/themes": "^3.3.0",
     "express": "^5.1.0",
+    "radix-ui": "^1.4.3",
     "react": "^19.2.5",
     "react-dom": "^19.2.5"
   },

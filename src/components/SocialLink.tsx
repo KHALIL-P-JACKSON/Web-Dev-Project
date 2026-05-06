@@ -1,3 +1,5 @@
+import { Box, Flex, Text } from '@radix-ui/themes';
+
 type SocialLinkProps = {
   name: string;
   href: string;
@@ -8,13 +10,36 @@ type SocialLinkProps = {
 
 function SocialLink({ name, href, image, alt, width }: SocialLinkProps) {
   return (
-    <div className="col-sm-4">
-      <p>{name}</p>
+    <Box>
+      <Flex direction="column" align="center" gap="2">
+        <Text size="3" weight="medium">
+          {name}
+        </Text>
 
-      <a href={href} target="_blank" rel="noreferrer">
-        <img src={image} alt={alt} style={width ? { width } : {}} />
-      </a>
-    </div>
+        <a
+          href={href}
+          target="_blank"
+          rel="noreferrer"
+          style={{
+            display: 'inline-block',
+          }}
+        >
+          <img
+            src={image}
+            alt={alt}
+            style={{
+              width: width ?? '60px',
+              height: 'auto',
+              transition: 'transform 0.2s ease',
+            }}
+            onMouseOver={(e) =>
+              (e.currentTarget.style.transform = 'scale(1.08)')
+            }
+            onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+          />
+        </a>
+      </Flex>
+    </Box>
   );
 }
 

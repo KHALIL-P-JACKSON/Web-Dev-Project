@@ -1,59 +1,60 @@
+import { Box, Container, Flex, Grid, Heading, Text } from '@radix-ui/themes';
 import ResumeCard from './ResumeCard';
 
 function AboutSection() {
   return (
-    <div className="container-fluid bg-2 text-center" id="About">
-      <h2 className="section-header">Who Am I?</h2>
+    <Box id="About" className="about-bg">
+      <Container size="4">
+        {/* Section Title */}
+        <Flex direction="column" align="center" gap="4" py="9">
+          <Heading size="8">Who Am I?</Heading>
+        </Flex>
 
-      <br />
-      <br />
-      <br />
+        {/* Main Layout */}
+        <Grid columns={{ initial: '1', md: '2' }} gap="8" align="center">
+          {/* Left: Resume Card */}
+          <Box>
+            <ResumeCard />
+          </Box>
 
-      <div className="row">
-        <div className="col-sm-4">
-          <ResumeCard />
-        </div>
+          {/* Right: About Text */}
+          <Box>
+            <Heading size="6" mb="4">
+              About Me
+            </Heading>
 
-        <div className="col-sm-4 col-sm-offset-4">
-          <br />
+            <Flex direction="column" gap="4">
+              <Text size="3" style={{ lineHeight: '1.7' }}>
+                I am an enthusiastic and driven Information Technology sophomore
+                at Kennesaw State University with a passion for leveraging
+                technology to solve real-world problems. I bring a diverse skill
+                set to the table, having honed my leadership abilities as the
+                Master of Ceremonies for the Clayton County CTAE ceremony in
+                2023. As an honors student, I consistently demonstrate strong
+                communication, teamwork, and adaptability.
+              </Text>
 
-          <h3>About Me</h3>
+              <Text size="3" style={{ lineHeight: '1.7' }}>
+                In addition to my academic achievements, I have a strong
+                background in management and operations, gained through my
+                experience as an Area Supervisor at Chick-fil-A. I developed
+                expertise in team leadership, customer service, and
+                organizational efficiency. I also contributed as a Program
+                Supervisor in Parks and Recreation, supporting community
+                engagement and program development.
+              </Text>
 
-          <br />
-          <br />
-          <br />
-
-          <p id="p1">
-            I am an enthusiastic and driven Information Technology Sophomore at
-            Kennesaw State University with a passion for leveraging technology
-            to solve real-world problems. I bring a diverse skill set to the
-            table, having honed my leadership abilities as the Master of
-            Ceremonies for Clayton County CTAE ceremony in 2023. As an honors
-            student, I consistently demonstrate exceptional soft skills,
-            including communication, teamwork, and adaptability.
-          </p>
-
-          <p id="p1">
-            In addition to my academic achievements, I have a strong background
-            in management and operations, gained through my experience as an
-            Area Supervisor at Chick-fil-A. In this role, I developed expertise
-            in team leadership, customer service, and organizational efficiency.
-            I have also contributed my skills to the community as a Program
-            Supervisor in the Parks and Recreation sector, where I played a key
-            role in enhancing recreational programs and community engagement.
-          </p>
-
-          <p id="p1">
-            I am passionate about harnessing technology&apos;s power to create
-            innovative solutions and eager to explore opportunities that allow
-            me to further develop my technical skills and contribute
-            meaningfully to the IT industry. Let&apos;s connect and explore how
-            my unique background and enthusiasm can add value to your team or
-            project.
-          </p>
-        </div>
-      </div>
-    </div>
+              <Text size="3" style={{ lineHeight: '1.7' }}>
+                I am passionate about using technology to create innovative
+                solutions and I’m eager to grow my technical skills while
+                contributing meaningfully to the IT industry. Let’s connect and
+                explore how I can add value to your team or project.
+              </Text>
+            </Flex>
+          </Box>
+        </Grid>
+      </Container>
+    </Box>
   );
 }
 
