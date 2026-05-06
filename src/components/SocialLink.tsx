@@ -36,6 +36,8 @@ function SocialLink({ name, href, image, alt, width }: SocialLinkProps) {
               (e.currentTarget.style.transform = 'scale(1.08)')
             }
             onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+            onFocus={(e) => (e.currentTarget.style.transform = 'scale(1.08)')}
+            onBlur={(e) => (e.currentTarget.style.transform = 'scale(1)')}
           />
         </a>
       </Flex>
