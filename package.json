@@ -22,9 +22,12 @@
   "bugs": {
     "url": "https://github.com/KHALIL-P-JACKSON/Web-Dev-Project/issues"
   },
-  "homepage": "https://github.com/KHALIL-P-JACKSON/Web-Dev-Project#readme",
+  "homepage": "https://KHALIL-P-JACKSON.github.io/Web-Dev-Project/",
   "dependencies": {
+    "@radix-ui/react-navigation-menu": "^1.2.14",
+    "@radix-ui/themes": "^3.3.0",
     "express": "^5.1.0",
+    "radix-ui": "^1.4.3",
     "react": "^19.2.5",
     "react-dom": "^19.2.5"
   },
