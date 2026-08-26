@@ -1,6 +1,4 @@
-import type { CSSProperties } from 'react';
-import { Box, Container, Flex, Heading } from '@radix-ui/themes';
-
+import { Box, Container, Flex, Heading, Button, Badge } from '@radix-ui/themes';
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 
 function Navbar() {
@@ -10,66 +8,108 @@ function Navbar() {
         position: 'sticky',
         top: 0,
         zIndex: 1000,
-        backdropFilter: 'blur(10px)',
-        borderBottom: '1px solid var(--gray-6)',
-        backgroundColor: 'rgba(17, 17, 17, 0.8)',
+        backgroundColor: '#204f46',
+        boxShadow: '0 4px 20px -2px rgba(0, 0, 0, 0.25)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
       }}
     >
-      <Container size="4">
+      <Container size="4" px="4">
         <Flex justify="between" align="center" py="4">
           {/* Logo / Brand */}
-          <Heading size="5" color="iris">
-            Khalil Jackson
-          </Heading>
-
-          {/* Navigation */}
-          <NavigationMenu.Root>
-            <NavigationMenu.List
+          <a
+            href="#Home"
+            style={{
+              textDecoration: 'none',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
+            }}
+          >
+            <Badge
+              size="3"
               style={{
-                display: 'flex',
-                gap: '1.5rem',
-                listStyle: 'none',
-                margin: 0,
-                padding: 0,
-                alignItems: 'center',
+                backgroundColor: '#ffffff',
+                color: '#204f46',
+                borderRadius: '10px',
+                fontWeight: 800,
+                fontSize: '1.15rem',
+                padding: '6px 10px',
               }}
             >
-              <NavigationMenu.Item>
-                <NavigationMenu.Link asChild>
-                  <a href="#Home" style={linkStyle}>
-                    Home
-                  </a>
-                </NavigationMenu.Link>
-              </NavigationMenu.Item>
+              KJ
+            </Badge>
+            <Heading
+              size={{ initial: '5', md: '6' }}
+              weight="bold"
+              style={{
+                color: '#ffffff',
+                letterSpacing: '-0.02em',
+              }}
+            >
+              Khalil Jackson
+            </Heading>
+          </a>
 
-              <NavigationMenu.Item>
-                <NavigationMenu.Link asChild>
-                  <a href="#About" style={linkStyle}>
-                    About
-                  </a>
-                </NavigationMenu.Link>
-              </NavigationMenu.Item>
+          {/* Navigation Items & CTA */}
+          <Flex align="center" gap={{ initial: '3', md: '6' }}>
+            <NavigationMenu.Root>
+              <NavigationMenu.List
+                style={{
+                  display: 'flex',
+                  gap: '0.75rem',
+                  listStyle: 'none',
+                  margin: 0,
+                  padding: 0,
+                  alignItems: 'center',
+                }}
+              >
+                <NavigationMenu.Item>
+                  <NavigationMenu.Link asChild>
+                    <a href="#Home" className="nav-link">
+                      Home
+                    </a>
+                  </NavigationMenu.Link>
+                </NavigationMenu.Item>
 
-              <NavigationMenu.Item>
-                <NavigationMenu.Link asChild>
-                  <a href="#Contact" style={linkStyle}>
-                    Contact
-                  </a>
-                </NavigationMenu.Link>
-              </NavigationMenu.Item>
-            </NavigationMenu.List>
-          </NavigationMenu.Root>
+                <NavigationMenu.Item>
+                  <NavigationMenu.Link asChild>
+                    <a href="#About" className="nav-link">
+                      About
+                    </a>
+                  </NavigationMenu.Link>
+                </NavigationMenu.Item>
+
+                <NavigationMenu.Item>
+                  <NavigationMenu.Link asChild>
+                    <a href="#Contact" className="nav-link">
+                      Contact
+                    </a>
+                  </NavigationMenu.Link>
+                </NavigationMenu.Item>
+              </NavigationMenu.List>
+            </NavigationMenu.Root>
+
+            {/* Quick Contact / Connect CTA Button */}
+            <Button
+              size="3"
+              style={{
+                backgroundColor: '#ffffff',
+                color: '#204f46',
+                fontWeight: 700,
+                fontSize: '1.15rem',
+                padding: '10px 20px',
+                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
+                cursor: 'pointer',
+              }}
+              asChild
+            >
+              <a href="#Contact">Connect</a>
+            </Button>
+          </Flex>
         </Flex>
       </Container>
     </Box>
   );
 }
-
-const linkStyle: CSSProperties = {
-  textDecoration: 'none',
-  color: 'white',
-  fontWeight: 500,
-  transition: 'opacity 0.2s ease',
-};
 
 export default Navbar;
