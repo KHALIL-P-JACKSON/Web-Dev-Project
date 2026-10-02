@@ -63,7 +63,8 @@ body {
   display: inline-block;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link:focus-visible {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.18);
 }
@@ -72,7 +73,7 @@ body {
 #About,
 #Projects,
 #Contact {
-  scroll-margin-top: 110px;
+  scroll-margin-top: 6rem;
 }
 
 .projects-section {
@@ -198,40 +199,9 @@ body {
   text-underline-offset: 3px;
 }
 
-.nav-link:focus-visible,
 .projects-github-link:focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 4px;
-}
-
-@media (max-width: 1023px) {
-  .navbar-actions {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .nav-link {
-    font-size: 1rem;
-    padding: 8px 10px;
-  }
-
-  #Home,
-  #About,
-  #Projects,
-  #Contact {
-    scroll-margin-top: 160px;
-  }
-}
-
-@media (max-width: 519px) {
-  .navbar-connect {
-    display: none;
-  }
-
-  .nav-link {
-    font-size: 0.95rem;
-    padding: 8px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -246,4 +216,42 @@ body {
   .project-card:hover {
     transform: none;
   }
+}
+
+.navbar-brand {
+  white-space: nowrap;
+}
+
+.navbar-brand:focus-visible,
+.nav-link:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.navbar-menu-toggle {
+  color: #ffffff;
+  min-width: 44px;
+  min-height: 44px;
+  margin: 0;
+}
+
+.navbar-mobile-menu {
+  width: min(20rem, calc(100vw - 2rem));
+  background-color: #204f46;
+  color: #ffffff;
+  z-index: 1001;
+}
+
+.navbar-mobile-menu .nav-link {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 1.125rem;
+}
+
+.navbar-mobile-connect {
+  min-height: 44px;
+  background-color: #ffffff;
+  color: #204f46;
+  font-weight: 700;
 }
