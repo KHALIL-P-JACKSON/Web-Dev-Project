@@ -1,5 +1,7 @@
 import { Box, Container, Text, Flex, Link } from '@radix-ui/themes';
 
+const copyrightYear = new Date().getFullYear();
+
 function Footer() {
   return (
     <Box
@@ -19,8 +21,7 @@ function Footer() {
             py="6"
           >
             <Text size="2" color="gray">
-              &copy; {new Date().getFullYear()} Khalil Jackson. All rights
-              reserved.
+              &copy; {copyrightYear} Khalil Jackson. All rights reserved.
             </Text>
             <Text size="2" color="gray">
               Built with React, TypeScript &amp; Radix Themes &bull;{' '}
