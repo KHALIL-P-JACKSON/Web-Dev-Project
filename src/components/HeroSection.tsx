@@ -69,6 +69,9 @@ function HeroSection() {
               {/* Call-to-Action Buttons */}
               <Flex gap="3" pt="2" wrap="wrap">
                 <Button size="3" variant="solid" asChild>
+                  <a href="#Projects">View My Work</a>
+                </Button>
+                <Button size="3" variant="soft" asChild>
                   <a href="#Contact">Get in Touch</a>
                 </Button>
                 <Button size="3" variant="soft" asChild>

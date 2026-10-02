@@ -14,7 +14,13 @@ function Navbar() {
       }}
     >
       <Container size="4" px="4">
-        <Flex justify="between" align="center" py="4">
+        <Flex
+          justify="between"
+          align={{ initial: 'start', md: 'center' }}
+          direction={{ initial: 'column', md: 'row' }}
+          gap="3"
+          py="4"
+        >
           {/* Logo / Brand */}
           <a
             href="#Home"
@@ -51,8 +57,12 @@ function Navbar() {
           </a>
 
           {/* Navigation Items & CTA */}
-          <Flex align="center" gap={{ initial: '3', md: '6' }}>
-            <NavigationMenu.Root>
+          <Flex
+            align="center"
+            gap={{ initial: '3', md: '6' }}
+            className="navbar-actions"
+          >
+            <NavigationMenu.Root aria-label="Main navigation">
               <NavigationMenu.List
                 style={{
                   display: 'flex',
@@ -81,6 +91,14 @@ function Navbar() {
 
                 <NavigationMenu.Item>
                   <NavigationMenu.Link asChild>
+                    <a href="#Projects" className="nav-link">
+                      Projects
+                    </a>
+                  </NavigationMenu.Link>
+                </NavigationMenu.Item>
+
+                <NavigationMenu.Item>
+                  <NavigationMenu.Link asChild>
                     <a href="#Contact" className="nav-link">
                       Contact
                     </a>
@@ -92,6 +110,7 @@ function Navbar() {
             {/* Quick Contact / Connect CTA Button */}
             <Button
               size="3"
+              className="navbar-connect"
               style={{
                 backgroundColor: '#ffffff',
                 color: '#204f46',
