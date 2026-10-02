@@ -28,14 +28,14 @@
     "@radix-ui/themes": "^3.3.0",
     "express": "^5.1.0",
     "radix-ui": "^1.6.7",
-    "react": "^19.2.6",
+    "react": "^19.2.7",
     "react-dom": "^19.3.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/express": "^5.0.6",
     "@types/node": "^26.6.3",
-    "@types/react": "^19.2.15",
+    "@types/react": "^19.2.16",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.0.2",
     "eslint": "^10.11.0",
