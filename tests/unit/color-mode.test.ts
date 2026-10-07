@@ -38,6 +38,7 @@ describe('color mode', () => {
     act(() => media.change(systemQuery, false));
     act(() => media.change(systemQuery, true));
     expect(result.current.colorMode).toBe('light');
+    expect(document.documentElement.dataset.theme).toBe('light');
   });
 
   it('ignores invalid saved preferences', () => {

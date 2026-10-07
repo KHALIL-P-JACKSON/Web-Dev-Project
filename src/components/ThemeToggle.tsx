@@ -13,7 +13,6 @@ function ThemeToggle({ colorMode, onToggle }: ThemeToggleProps) {
       className="theme-toggle"
       onClick={onToggle}
       aria-label={`Switch to ${dark ? 'light' : 'dark'} mode`}
-      aria-pressed={dark}
       title={`Switch to ${dark ? 'light' : 'dark'} mode`}
     >
       <svg

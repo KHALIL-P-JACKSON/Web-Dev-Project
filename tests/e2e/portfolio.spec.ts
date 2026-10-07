@@ -77,7 +77,7 @@ test('remembers light and dark selections after reload', async ({ page }) => {
   }
 });
 
-test('follows system preference until the visitor overrides it', async ({
+test('follows system preference and restores a saved override on a new visit', async ({
   page,
 }) => {
   await page.emulateMedia({ colorScheme: 'dark' });
@@ -86,8 +86,17 @@ test('follows system preference until the visitor overrides it', async ({
   await page.emulateMedia({ colorScheme: 'light' });
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
   await page.getByRole('button', { name: 'Switch to dark mode' }).click();
+  await expect(
+    page.getByRole('button', { name: 'Switch to light mode' })
+  ).toBeVisible();
   await page.emulateMedia({ colorScheme: 'dark' });
   await page.emulateMedia({ colorScheme: 'light' });
+  // Live media-event policy is checked with React act() in the unit suite.
+  // Reload checks saved preference against the new system setting after React mounts.
+  await page.reload();
+  await expect(
+    page.getByRole('button', { name: 'Switch to light mode' })
+  ).toBeVisible();
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
 });
 
