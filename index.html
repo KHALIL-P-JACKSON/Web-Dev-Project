@@ -1,12 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Khalil Jackson</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta
+      name="description"
+      content="Khalil Jackson — software developer, KSU Information Technology student, and builder of thoughtful web and native app experiences."
+    />
+    <meta name="color-scheme" content="light dark" />
+    <title>Khalil Jackson — Software Developer</title>
+    <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
+    <script>
+      // Apply the saved theme before React loads to avoid a bright flash.
+      (() => {
+        let saved;
+        try {
+          saved = localStorage.getItem('kj-color-mode');
+        } catch {}
+        const mode =
+          saved === 'light' || saved === 'dark'
+            ? saved
+            : window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light';
+        document.documentElement.dataset.theme = mode;
+        document.documentElement.style.colorScheme = mode;
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

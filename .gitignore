@@ -92,6 +92,8 @@ public
 !public/
 public/*
 !public/projects/
+!public/photos/
+!public/favicon.svg
 
 # Storybook build outputs
 .out

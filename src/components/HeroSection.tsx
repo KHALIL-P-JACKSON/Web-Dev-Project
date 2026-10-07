@@ -1,131 +1,87 @@
-import {
-  Box,
-  Container,
-  Flex,
-  Grid,
-  Heading,
-  Text,
-  Badge,
-  Button,
-  Card,
-} from '@radix-ui/themes';
+import ArrowIcon from './ArrowIcon';
+import { Container } from '@radix-ui/themes';
+import Monogram from './Monogram';
+import Reveal from './Reveal';
+import { portrait } from '../data/portfolio';
 
 function HeroSection() {
   return (
-    <Box
-      id="Home"
-      py={{ initial: '6', md: '9' }}
-      style={{
-        background:
-          'radial-gradient(ellipse at 50% 10%, var(--accent-a3) 0%, transparent 60%)',
-      }}
-    >
+    <section id="Home" aria-labelledby="hero-heading" className="hero-section">
       <Container size="4" px="4">
-        <Grid
-          columns={{ initial: '1', md: '12' }}
-          gap={{ initial: '6', md: '8' }}
-          align="center"
-        >
-          {/* Left Column: Text & Intro Details */}
-          <Box gridColumn={{ initial: '1', md: 'span 7' }}>
-            <Flex direction="column" gap="4">
-              {/* Badges / Highlights */}
-              <Flex gap="2" wrap="wrap" align="center">
-                <Badge color="red" variant="surface" size="2">
-                  🐔 Chick-fil-A &bull; Software Developer Co-op
-                </Badge>
-                <Badge color="amber" variant="surface" size="2">
-                  🦉 KSU &bull; Information Technology
-                </Badge>
-              </Flex>
-
-              {/* Main Headline */}
-              <Box>
-                <Text size="3" color="gray" weight="medium">
-                  Welcome to my portfolio
-                </Text>
-                <Heading size={{ initial: '8', md: '9' }} weight="bold" mt="1">
-                  Hi, I&apos;m{' '}
-                  <span style={{ color: 'var(--accent-11)' }}>
-                    Khalil Jackson
-                  </span>
-                </Heading>
-              </Box>
-
-              {/* Subheading / Tagline */}
-              <Text size={{ initial: '4', md: '5' }} color="gray" highContrast>
-                Software Developer &amp; Information Technology Student
-              </Text>
-
-              {/* Welcoming Bio */}
-              <Text size="3" color="gray" style={{ lineHeight: '1.75' }}>
-                Welcome! I am an Information Technology student at Kennesaw
-                State University and currently a Software Developer Co-op at
-                Chick-fil-A. I specialize in building intuitive, responsive web
-                applications and love turning ideas into elegant digital
-                solutions.
-              </Text>
-
-              {/* Call-to-Action Buttons */}
-              <Flex gap="3" pt="2" wrap="wrap">
-                <Button size="3" variant="solid" asChild>
-                  <a href="#Projects">View My Work</a>
-                </Button>
-                <Button size="3" variant="soft" asChild>
-                  <a href="#Contact">Get in Touch</a>
-                </Button>
-                <Button size="3" variant="soft" asChild>
-                  <a href="#About">About Me</a>
-                </Button>
-              </Flex>
-            </Flex>
-          </Box>
-
-          {/* Right Column: Profile Card / Image */}
-          <Box gridColumn={{ initial: '1', md: 'span 5' }}>
-            <Card
-              size="3"
-              style={{
-                borderRadius: '24px',
-                overflow: 'hidden',
-                boxShadow: '0 20px 40px -15px rgba(0, 0, 0, 0.25)',
-              }}
-            >
-              <Flex direction="column" align="center" gap="3" p="2">
-                <Box
-                  style={{
-                    width: '100%',
-                    maxHeight: '400px',
-                    borderRadius: '16px',
-                    overflow: 'hidden',
-                    backgroundColor: 'var(--gray-3)',
-                  }}
-                >
-                  <img
-                    src={`${import.meta.env.BASE_URL}IMG_7380.jpeg`}
-                    alt="Khalil Jackson"
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      display: 'block',
-                    }}
-                  />
-                </Box>
-                <Flex direction="column" align="center" gap="1" pt="1">
-                  <Text size="4" weight="bold">
-                    Khalil Jackson
-                  </Text>
-                  <Text size="2" color="gray">
-                    Software Developer &bull; KSU IT Student
-                  </Text>
-                </Flex>
-              </Flex>
-            </Card>
-          </Box>
-        </Grid>
+        <div className="hero-grid">
+          <Reveal className="hero-copy">
+            <p className="eyebrow">
+              <span className="status-dot" /> Software developer · Atlanta, GA
+            </p>
+            <p className="hero-greeting">Hey, I’m</p>
+            <h1 id="hero-heading">
+              Khalil
+              <br />
+              <span>Jackson.</span>
+            </h1>
+            <p className="hero-tagline">
+              Thoughtful code.
+              <br />
+              <em>Real-world impact.</em>
+            </p>
+            <p className="hero-description">
+              I’m an IT student at Kennesaw State and a Software Developer Co-op
+              at Chick-fil-A. I turn ideas into intuitive experiences for the
+              web and beyond.
+            </p>
+            <div className="hero-actions">
+              <a className="button" href="#Projects">
+                Explore my work{' '}
+                <span aria-hidden="true">
+                  <ArrowIcon />
+                </span>
+              </a>
+              <a className="text-link" href="#Contact">
+                Get in touch <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </Reveal>
+          <Reveal className="hero-visual">
+            <div className="portrait-glow" aria-hidden="true" />
+            <Monogram className="hero-monogram" />
+            <figure className="portrait-frame">
+              <img
+                src={`${import.meta.env.BASE_URL}${portrait.image}`}
+                alt={portrait.alt}
+                style={{ objectPosition: portrait.position }}
+                width="1170"
+                height="749"
+                fetchPriority="high"
+              />
+              <figcaption>
+                <span>Curiosity. Care. Craft.</span>
+                <span aria-hidden="true">
+                  <ArrowIcon />
+                </span>
+              </figcaption>
+            </figure>
+            <div className="portrait-note">
+              <span className="code-symbol" aria-hidden="true">
+                &lt;/&gt;
+              </span>
+              <div>
+                <strong>Building with purpose</strong>
+                <span>One idea at a time.</span>
+              </div>
+            </div>
+            <div className="portrait-label">
+              <span className="status-dot" /> Developer &amp; lifelong learner
+            </div>
+          </Reveal>
+        </div>
+        <div className="hero-footer">
+          <span>Web experiences · Native apps · Human-centered design</span>
+          <a href="#Projects" className="scroll-cue">
+            Take a look around <span aria-hidden="true">↓</span>
+          </a>
+        </div>
       </Container>
-    </Box>
+    </section>
   );
 }
 

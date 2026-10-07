@@ -7,10 +7,14 @@ export interface Project {
   highlights: string[];
   repositoryUrl: string;
   websiteUrl?: string;
+  featured?: boolean;
   preview: {
     image: string;
     alt: string;
     kind: 'website' | 'app';
+    // Optional real app screenshot, relative to public/, for the phone frame.
+    screenImage?: string;
+    screenAlt?: string;
   };
 }
 
@@ -18,6 +22,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 'dluxe-beauty',
+    featured: true,
     title: 'D’Luxe Beauty',
     category: 'Business website',
     description:
