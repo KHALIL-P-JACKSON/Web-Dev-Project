@@ -15,6 +15,10 @@ export default defineConfig([
   tseslint.configs.recommended,
   pluginReact.configs['recommended-typescript'],
   {
+    files: ['tests/**', 'playwright.config.ts', 'vitest.config.ts'],
+    languageOptions: { globals: { ...globals.browser, ...globals.node } },
+  },
+  {
     plugins: {
       prettier: eslintPluginPrettier,
     },

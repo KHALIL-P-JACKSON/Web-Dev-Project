@@ -32,7 +32,18 @@ Use compressed JPEG/WebP for photos. Keep descriptive alt text with each new ima
 
 Run `npm ci`, then `npm run dev`. The local URL uses `/Web-Dev-Project/` to match GitHub Pages.
 
-Checks: `npm run lint`, `npm run format:check`, and `npm run build` (includes TypeScript checking). The Pages workflow publishes `main`; creativity-branch changes can be reviewed before merging.
+Checks: `npm run lint`, `npm run format:check`, and `npm run build` (includes TypeScript checking for the site and tests).
+
+## Reliability tests
+
+- `npm run test:unit` checks system/saved themes, blocked browser storage, animation fallbacks, observer cleanup, and the content/asset manifest.
+- Run `npx playwright install --with-deps chromium firefox webkit` once, then `npm run test:e2e`. The suite starts a production build at `/Web-Dev-Project/` and tests Chrome, Firefox, and mobile Safari.
+- Browser checks cover navigation, skip links, all configured images, theme persistence, screenshot selection and keyboard controls, full-size photo/resume links, responsive layouts, reduced motion, JavaScript errors, and automated WCAG A/AA accessibility checks in both themes. Automated accessibility checks complement manual keyboard and visual review.
+- `npm test` runs both suites; `npm run test:unit:watch` and `npm run test:e2e:ui` are available during development. Browser reports and failure traces are saved as CI artifacts.
+
+The `Site CI` workflow runs quality checks, unit tests, and all three browser projects. Its final **Reliability gate** fails if any dependency fails, is skipped, or is canceled. Configure that GitHub Actions check as required for **both `develop` and `main`**, with branches required to be up to date before merge. Workflow YAML alone cannot enforce branch protection; the rule must be active in GitHub repository settings.
+
+CodeRabbit automatically reviews non-draft PRs targeting `develop` and `main`. Address its findings and confirm its review applies to the latest commit before merging. GitHub Pages deploys the production artifact from a successful `Site CI` push run on `main`, so failed CI cannot publish the site.
 
 ## Development checks
 

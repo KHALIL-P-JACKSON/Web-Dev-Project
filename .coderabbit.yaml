@@ -1,7 +1,7 @@
-language: "en-US"
+language: 'en-US'
 early_access: false
 reviews:
-  profile: "chill"
+  profile: 'chill'
   request_changes_workflow: true
   high_level_summary: true
   poem: false
@@ -11,18 +11,22 @@ reviews:
     enabled: true
     drafts: false
     base_branches:
-      - main 
+      - main
       - develop
   path_filters:
-    - "!dist/**"
-    - "!node_modules/**"
-    - "!*.md"
+    - '!dist/**'
+    - '!node_modules/**'
+    - '!*.md'
   path_instructions:
-    - path: "src/**"
-      instructions: "Focus on React best practices, TypeScript types, and code quality. Ensure components are properly structured and hooks are used correctly."
-    - path: "*.ts"
+    - path: 'tests/**'
+      instructions: 'Review test coverage of user behavior, accessibility, and failure cases. Flag flaky waits, missing assertions, and assertions that merely duplicate implementation.'
+    - path: '.github/workflows/**'
+      instructions: 'Verify every required check is included in the Reliability gate and Pages deployment only uses a build from successful main CI. Review least-privilege permissions and workflow_run trust boundaries.'
+    - path: 'src/**'
+      instructions: 'Focus on React best practices, TypeScript types, and code quality. Ensure components are properly structured and hooks are used correctly.'
+    - path: '*.ts'
       instructions: "Check for proper TypeScript usage, type safety, and adherence to the project's coding standards."
-    - path: "*.js"
-      instructions: "Ensure modern JavaScript practices and consider migration to TypeScript if appropriate."
+    - path: '*.js'
+      instructions: 'Ensure modern JavaScript practices and consider migration to TypeScript if appropriate.'
 chat:
   auto_reply: true
