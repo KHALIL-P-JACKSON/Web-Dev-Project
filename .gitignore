@@ -46,6 +46,8 @@ pids
 
 # Coverage directory used by tools like istanbul
 coverage/
+playwright-report/
+test-results/
 *.lcov
 
 # nyc test coverage
@@ -92,6 +94,8 @@ public
 !public/
 public/*
 !public/projects/
+!public/photos/
+!public/favicon.svg
 
 # Storybook build outputs
 .out
