@@ -43,7 +43,7 @@ Checks: `npm run lint`, `npm run format:check`, and `npm run build` (includes Ty
 
 The `Site CI` workflow runs quality checks, unit tests, and all three browser projects. Its final **Reliability gate** fails if any dependency fails, is skipped, or is canceled. Configure that GitHub Actions check as required for **both `develop` and `main`**, with branches required to be up to date before merge. Workflow YAML alone cannot enforce branch protection; the rule must be active in GitHub repository settings.
 
-CodeRabbit automatically reviews non-draft PRs targeting `develop` and `main`. Address its findings and confirm its review applies to the latest commit before merging. GitHub Pages deploys the production artifact from a successful `Site CI` push run on `main`, so failed CI cannot publish the site.
+CodeRabbit is configured to review non-draft PRs targeting `develop` and `main`. If its service skips automatic review, comment `@coderabbitai review` on the PR. A green status accompanying a skipped review is not a completed review: confirm the latest commit was reviewed and address the findings before merging. GitHub Pages deploys the production artifact from a successful `Site CI` push run on `main`, so failed CI cannot publish the site.
 
 ## Development checks
 
