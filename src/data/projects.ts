@@ -1,3 +1,12 @@
+export interface AppScreenshot {
+  id: string;
+  label: string;
+  image: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -12,9 +21,8 @@ export interface Project {
     image: string;
     alt: string;
     kind: 'website' | 'app';
-    // Optional real app screenshot, relative to public/, for the phone frame.
-    screenImage?: string;
-    screenAlt?: string;
+    // Real app screenshots, with image paths relative to public/.
+    screenshots?: AppScreenshot[];
   };
 }
 
@@ -78,6 +86,32 @@ export const projects: Project[] = [
       image: 'projects/gymtracker-icon.png',
       alt: 'GymTracker app icon',
       kind: 'app',
+      screenshots: [
+        {
+          id: 'home',
+          label: 'Home',
+          image: 'projects/gymtracker-home.jpg',
+          alt: 'GymTracker Home screen with Start Workout, day streak, workout count, and volume summary',
+          width: 588,
+          height: 1280,
+        },
+        {
+          id: 'workout',
+          label: 'Workout',
+          image: 'projects/gymtracker-workout.jpg',
+          alt: 'GymTracker Workout screen with exercise search, custom exercises, and a chest exercise list',
+          width: 588,
+          height: 1280,
+        },
+        {
+          id: 'plan',
+          label: 'Plan',
+          image: 'projects/gymtracker-plan.jpg',
+          alt: 'GymTracker Plan screen showing Push Day, Pull Day, and Leg Day preset splits with Add to Workout buttons',
+          width: 588,
+          height: 1280,
+        },
+      ],
     },
   },
 ];

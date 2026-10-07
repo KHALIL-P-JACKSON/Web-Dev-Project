@@ -746,7 +746,99 @@ em {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+}
+
+.project-stage--gymtracker,
+.project-stage--portfolio {
+  height: 440px;
+}
+
+.app-screen-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  width: 100%;
+}
+
+.phone-frame--screenshot {
+  display: block;
+  width: 160px;
+  height: auto;
+  aspect-ratio: 588 / 1280;
+  box-sizing: content-box;
+  border-radius: 25px;
+  transform: none;
+  background: #f3f3f9;
+}
+
+.phone-frame--screenshot .phone-screenshot {
+  height: auto;
+}
+
+.screen-picker {
+  min-width: 90px;
+}
+
+.screen-picker > .eyebrow {
+  font-size: 9px;
+  color: #405047;
+  margin-bottom: 14px;
+}
+
+.dark .screen-picker > .eyebrow {
+  color: #c3cfc6;
+}
+
+.screen-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.screen-option {
+  min-height: 36px;
+  padding: 7px 13px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.screen-option[aria-pressed='true'] {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border-color: transparent;
+}
+
+.screen-option:hover:not([aria-pressed='true']) {
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+
+.screen-preview-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.screen-full-size {
+  margin-top: 16px;
+  font-size: 10px;
+  gap: 6px;
 }
 .project-content {
   display: flex;
@@ -1328,6 +1420,42 @@ em {
 }
 
 @media (max-width: 599px) {
+  .project-stage.project-stage--gymtracker {
+    height: 475px;
+    padding: 20px 16px 42px;
+  }
+
+  .app-screen-preview {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .phone-frame--screenshot {
+    width: 148px;
+    height: auto;
+  }
+
+  .screen-picker {
+    text-align: center;
+  }
+
+  .screen-picker > .eyebrow {
+    display: none;
+  }
+
+  .screen-options {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .screen-option {
+    font-size: 11px;
+    min-height: 34px;
+  }
+
+  .screen-full-size {
+    margin-top: 9px;
+  }
   .field-photo-grid {
     grid-template-columns: 1fr;
     max-width: 400px;
@@ -1454,6 +1582,11 @@ em {
   .phone-frame {
     width: 148px;
     height: 276px;
+  }
+
+  .phone-frame.phone-frame--screenshot {
+    height: auto;
+    width: 148px;
   }
   .project-content,
   .project-card-featured .project-content {

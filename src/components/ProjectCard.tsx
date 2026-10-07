@@ -1,4 +1,5 @@
 import ArrowIcon from './ArrowIcon';
+import AppScreenshotPreview from './AppScreenshotPreview';
 import type { Project } from '../data/projects';
 
 interface ProjectCardProps {
@@ -14,40 +15,35 @@ function ProjectCard({ project }: ProjectCardProps) {
       aria-labelledby={`${project.id}-title`}
     >
       <div className={`project-stage project-stage--${project.id}`}>
-        {isApp ? (
+        {isApp && project.preview.screenshots?.length ? (
+          <AppScreenshotPreview
+            projectId={project.id}
+            projectTitle={project.title}
+            screenshots={project.preview.screenshots}
+          />
+        ) : isApp ? (
           <div className="phone-frame">
             <div className="phone-island" aria-hidden="true" />
-            {project.preview.screenImage ? (
+            <div className="phone-cover">
+              <span className="phone-category">Native iOS app</span>
               <img
-                className="phone-screenshot"
-                src={`${import.meta.env.BASE_URL}${project.preview.screenImage}`}
-                alt={
-                  project.preview.screenAlt ?? `${project.title} app screenshot`
-                }
+                src={imageUrl}
+                alt={project.preview.alt}
+                width="1024"
+                height="1024"
                 loading="lazy"
+                decoding="async"
               />
-            ) : (
-              <div className="phone-cover">
-                <span className="phone-category">Native iOS app</span>
-                <img
-                  src={imageUrl}
-                  alt={project.preview.alt}
-                  width="1024"
-                  height="1024"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <strong>{project.title}</strong>
-                <span>Train. Track. Progress.</span>
-                <div className="phone-features">
-                  Workout logging
-                  <br />
-                  Training plans
-                  <br />
-                  Strength progress
-                </div>
+              <strong>{project.title}</strong>
+              <span>Train. Track. Progress.</span>
+              <div className="phone-features">
+                Workout logging
+                <br />
+                Training plans
+                <br />
+                Strength progress
               </div>
-            )}
+            </div>
             <div className="phone-home" aria-hidden="true" />
           </div>
         ) : (

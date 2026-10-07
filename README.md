@@ -23,7 +23,7 @@ Put new photos in `public/photos/` and project images in `public/projects/`. Pat
 - **Portrait:** edit `portrait.image`, `portrait.alt`, `portrait.position`, `portrait.width`, and `portrait.height` in `src/data/portfolio.ts`. The position controls the crop; the headshot uses `50% 40%`.
 - **Field-testing gallery:** edit `fieldPhotos` in `src/data/portfolio.ts`. Each photo has an image path, alt text, title, and caption; the full original opens when selected.
 - **Project previews:** edit `preview.image` and `preview.alt` in `src/data/projects.ts`.
-- **GymTracker screenshot:** add `preview.screenImage` and `preview.screenAlt` to the GymTracker entry. A real screenshot replaces the branded app cover inside the phone frame. A portrait screenshot works best.
+- **GymTracker screenshots:** edit `preview.screenshots` in `src/data/projects.ts`. Each screen has an `id`, `label`, image path, alt text, and intrinsic width/height. Visitors can switch between Home, Workout, and Plan and open the selected original at full size. Screenshots include the iPhone status bar, so the preview does not add a second notch or home indicator.
 - **Current project and career milestones:** edit `currentBuild` and `milestones` in `src/data/portfolio.ts`.
 
 Use compressed JPEG/WebP for photos. Keep descriptive alt text with each new image.
