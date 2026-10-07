@@ -1,42 +1,33 @@
-import { Box, Container, Text, Flex, Link } from '@radix-ui/themes';
+import ArrowIcon from './ArrowIcon';
+import { Container } from '@radix-ui/themes';
+import Monogram from './Monogram';
+
+const copyrightYear = new Date().getFullYear();
 
 function Footer() {
   return (
-    <Box
-      asChild
-      style={{
-        borderTop: '1px solid var(--gray-4)',
-        backgroundColor: 'var(--gray-1)',
-      }}
-    >
-      <footer>
-        <Container size="4" px="4">
-          <Flex
-            direction={{ initial: 'column', sm: 'row' }}
-            justify="between"
-            align="center"
-            gap="2"
-            py="6"
+    <footer className="footer">
+      <Container size="4" px="4">
+        <div className="footer-inner">
+          <a className="footer-brand" href="#Home" aria-label="Back to top">
+            <Monogram />
+            <span>© {copyrightYear} Khalil Jackson</span>
+          </a>
+          <span>Made with care. Built with React.</span>
+          <a
+            className="text-link"
+            href="https://github.com/KHALIL-P-JACKSON/Web-Dev-Project"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <Text size="2" color="gray">
-              &copy; {new Date().getFullYear()} Khalil Jackson. All rights
-              reserved.
-            </Text>
-            <Text size="2" color="gray">
-              Built with React, TypeScript &amp; Radix Themes &bull;{' '}
-              <Link
-                href="https://github.com/KHALIL-P-JACKSON/Web-Dev-Project"
-                target="_blank"
-                rel="noreferrer"
-                color="mint"
-              >
-                GitHub
-              </Link>
-            </Text>
-          </Flex>
-        </Container>
-      </footer>
-    </Box>
+            View source{' '}
+            <span aria-hidden="true">
+              <ArrowIcon />
+            </span>
+          </a>
+        </div>
+      </Container>
+    </footer>
   );
 }
 
