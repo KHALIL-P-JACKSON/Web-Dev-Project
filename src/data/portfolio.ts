@@ -1,9 +1,39 @@
 // Image paths are relative to public/. Keep the GitHub Pages base path out of data.
 export const portrait = {
-  image: 'IMG_7380.jpeg',
-  alt: 'Khalil Jackson celebrating graduation in his cap and gown',
-  position: '52% 35%',
+  image: 'photos/khalil-headshot.jpg',
+  alt: 'Headshot of Khalil Jackson smiling, wearing glasses and a collared shirt',
+  position: '50% 40%',
+  width: 800,
+  height: 800,
 };
+
+export const fieldPhotos = [
+  {
+    image: 'photos/chick-fil-a-software-testing.jpg',
+    alt: 'Khalil Jackson checking a tablet while a Chick-fil-A team member serves a drive-thru guest',
+    title: 'Testing in the drive-thru',
+    caption: 'Checking software in the environment where it’s used.',
+  },
+  {
+    image: 'photos/chick-fil-a-drive-thru-testing.jpg',
+    alt: 'Khalil Jackson and a colleague observing a Chick-fil-A drive-thru interaction with tablets in hand',
+    title: 'Observing the workflow',
+    caption: 'Seeing how software fits into the restaurant’s day-to-day work.',
+  },
+  {
+    image: 'photos/chick-fil-a-field-discussion.jpg',
+    alt: 'Khalil Jackson discussing field testing with a Chick-fil-A colleague outside the restaurant',
+    title: 'Comparing notes',
+    caption: 'Talking through observations with the team in the field.',
+  },
+  {
+    image: 'photos/chick-fil-a-team-collaboration.jpg',
+    alt: 'Khalil Jackson and a Chick-fil-A colleague collaborating with tablets near the drive-thru',
+    title: 'Working with the team',
+    caption:
+      'Connecting the people building software with the people using it.',
+  },
+];
 
 export const currentBuild = {
   title: 'A portfolio that feels like me.',

@@ -408,12 +408,12 @@ em {
 }
 .portrait-frame figcaption {
   position: absolute;
-  inset: auto 0 35px;
+  inset: auto 0 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
-  padding: 40px 23px 20px;
+  padding: 40px 23px 55px;
   background: linear-gradient(transparent, #07130ccc);
   color: #fff;
   font-size: 13px;
@@ -932,6 +932,90 @@ em {
   margin-top: 28px;
 }
 
+.field-gallery {
+  margin-top: 64px;
+  padding-top: 54px;
+  border-top: 1px solid var(--line);
+}
+
+.field-gallery-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 36px;
+  margin-bottom: 30px;
+}
+
+.field-gallery-heading h3 {
+  margin-top: 14px;
+  font-size: clamp(30px, 3.8vw, 44px);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+}
+
+.field-gallery-heading > p {
+  max-width: 360px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.field-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.field-photo-link {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.field-photo-link > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 853 / 1280;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.field-photo-open {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #ffffffed;
+  color: #172c25;
+  box-shadow: 0 2px 12px #00000020;
+}
+
+.field-photo figcaption {
+  padding: 15px 2px 0;
+}
+
+.field-photo h4 {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.field-photo figcaption p {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.75;
+}
+
 .contact-section {
   background: radial-gradient(
     ellipse at 50% 20%,
@@ -1052,6 +1136,9 @@ em {
   translate: 0 20px;
 }
 @media (hover: hover) {
+  .field-photo-link:hover > img {
+    transform: scale(1.025);
+  }
   .button:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow);
@@ -1121,6 +1208,24 @@ em {
 }
 
 @media (max-width: 767px) {
+  .field-gallery {
+    margin-top: 46px;
+    padding-top: 38px;
+  }
+
+  .field-gallery-heading {
+    display: block;
+  }
+
+  .field-gallery-heading > p {
+    margin-top: 18px;
+    max-width: 480px;
+  }
+
+  .field-photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 16px;
+  }
   .section-space {
     padding: 70px 0;
   }
@@ -1223,6 +1328,12 @@ em {
 }
 
 @media (max-width: 599px) {
+  .field-photo-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-inline: auto;
+    gap: 28px;
+  }
   html {
     scroll-padding-top: 138px;
   }
@@ -1381,6 +1492,7 @@ em {
     translate: none;
   }
   .button:hover,
+  .field-photo-link:hover > img,
   .button:hover span,
   .text-link:hover span,
   .project-card:hover,

@@ -49,8 +49,8 @@ function HeroSection() {
                 src={`${import.meta.env.BASE_URL}${portrait.image}`}
                 alt={portrait.alt}
                 style={{ objectPosition: portrait.position }}
-                width="1170"
-                height="749"
+                width={portrait.width}
+                height={portrait.height}
                 fetchPriority="high"
               />
               <figcaption>

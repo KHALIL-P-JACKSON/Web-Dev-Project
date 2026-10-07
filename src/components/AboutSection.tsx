@@ -2,6 +2,7 @@ import { Container } from '@radix-ui/themes';
 import ResumeCard from './ResumeCard';
 import CareerTimeline from './CareerTimeline';
 import Reveal from './Reveal';
+import FieldTestingGallery from './FieldTestingGallery';
 
 const skills = [
   'React',
@@ -68,6 +69,7 @@ function AboutSection() {
             </p>
           </Reveal>
         </div>
+        <FieldTestingGallery />
       </Container>
     </section>
   );

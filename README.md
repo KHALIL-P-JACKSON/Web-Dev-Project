@@ -20,7 +20,8 @@ Take a look around! Thank you!
 
 Put new photos in `public/photos/` and project images in `public/projects/`. Paths in the data files are relative to `public/`; the components add the GitHub Pages base path automatically.
 
-- **Portrait:** edit `portrait.image`, `portrait.alt`, and `portrait.position` in `src/data/portfolio.ts`. The position controls the crop; the current graduation picture uses `52% 35%`.
+- **Portrait:** edit `portrait.image`, `portrait.alt`, `portrait.position`, `portrait.width`, and `portrait.height` in `src/data/portfolio.ts`. The position controls the crop; the headshot uses `50% 40%`.
+- **Field-testing gallery:** edit `fieldPhotos` in `src/data/portfolio.ts`. Each photo has an image path, alt text, title, and caption; the full original opens when selected.
 - **Project previews:** edit `preview.image` and `preview.alt` in `src/data/projects.ts`.
 - **GymTracker screenshot:** add `preview.screenImage` and `preview.screenAlt` to the GymTracker entry. A real screenshot replaces the branded app cover inside the phone frame. A portrait screenshot works best.
 - **Current project and career milestones:** edit `currentBuild` and `milestones` in `src/data/portfolio.ts`.
