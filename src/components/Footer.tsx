@@ -9,7 +9,11 @@ function Footer() {
     <footer className="footer">
       <Container size="4" px="4">
         <div className="footer-inner">
-          <a className="footer-brand" href="#Home" aria-label="Back to top">
+          <a
+            className="footer-brand"
+            href="#Home"
+            aria-label={`© ${copyrightYear} Khalil Jackson (back to top)`}
+          >
             <Monogram />
             <span>© {copyrightYear} Khalil Jackson</span>
           </a>

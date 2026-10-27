@@ -13,7 +13,7 @@ function ResumeCard() {
           href={resumeUrl}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="View my full resume (opens in a new tab)"
+          aria-label="View full resume (opens in a new tab)"
         >
           View full{' '}
           <span aria-hidden="true">

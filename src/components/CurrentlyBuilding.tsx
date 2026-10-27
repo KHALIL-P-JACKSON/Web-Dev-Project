@@ -35,7 +35,7 @@ function CurrentlyBuilding() {
             href={currentBuild.repositoryUrl}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Follow my portfolio build on GitHub (opens in a new tab)"
+            aria-label="Follow the build of my portfolio on GitHub (opens in a new tab)"
           >
             <span aria-hidden="true">
               <ArrowIcon />

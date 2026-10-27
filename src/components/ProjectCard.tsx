@@ -106,7 +106,7 @@ function ProjectCard({ project }: ProjectCardProps) {
               href={project.websiteUrl}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`Visit ${project.title} website (opens in a new tab)`}
+              aria-label={`Visit website for ${project.title} (opens in a new tab)`}
             >
               Visit website{' '}
               <span aria-hidden="true">
@@ -119,7 +119,7 @@ function ProjectCard({ project }: ProjectCardProps) {
             href={project.repositoryUrl}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`View ${project.title} code on GitHub (opens in a new tab)`}
+            aria-label={`View code for ${project.title} on GitHub (opens in a new tab)`}
           >
             View code{' '}
             <span aria-hidden="true">
