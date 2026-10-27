@@ -53,6 +53,9 @@ function ContactSection() {
             Jacksonkhalil05@gmail.com
           </a>
         </Reveal>
+        <span id="social-links-new-tab" hidden>
+          Opens in a new tab
+        </span>
         <Reveal className="social-grid">
           {socialLinks.map((link) => (
             <a
@@ -61,7 +64,7 @@ function ContactSection() {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`${link.name} ${link.description} (opens in a new tab)`}
+              aria-describedby="social-links-new-tab"
             >
               <img
                 src={`${import.meta.env.BASE_URL}${link.image}`}
