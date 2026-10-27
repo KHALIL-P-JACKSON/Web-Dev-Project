@@ -61,7 +61,7 @@ function ContactSection() {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`${link.name}: ${link.description} (opens in a new tab)`}
+              aria-label={`${link.name} ${link.description} (opens in a new tab)`}
             >
               <img
                 src={`${import.meta.env.BASE_URL}${link.image}`}
