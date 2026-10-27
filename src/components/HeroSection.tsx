@@ -1,7 +1,6 @@
 import ArrowIcon from './ArrowIcon';
 import { Container } from '@radix-ui/themes';
 import Monogram from './Monogram';
-import Reveal from './Reveal';
 import { portrait } from '../data/portfolio';
 
 function HeroSection() {
@@ -9,7 +8,7 @@ function HeroSection() {
     <section id="Home" aria-labelledby="hero-heading" className="hero-section">
       <Container size="4" px="4">
         <div className="hero-grid">
-          <Reveal className="hero-copy">
+          <div className="hero-copy">
             <p className="eyebrow">
               <span className="status-dot" /> Software developer · Atlanta, GA
             </p>
@@ -40,8 +39,8 @@ function HeroSection() {
                 Get in touch <span aria-hidden="true">→</span>
               </a>
             </div>
-          </Reveal>
-          <Reveal className="hero-visual">
+          </div>
+          <div className="hero-visual">
             <div className="portrait-glow" aria-hidden="true" />
             <Monogram className="hero-monogram" />
             <figure className="portrait-frame">
@@ -72,7 +71,7 @@ function HeroSection() {
             <div className="portrait-label">
               <span className="status-dot" /> Developer &amp; lifelong learner
             </div>
-          </Reveal>
+          </div>
         </div>
         <div className="hero-footer">
           <span>Web experiences · Native apps · Human-centered design</span>

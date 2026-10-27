@@ -214,6 +214,39 @@ test('keeps controls and screenshots inside the viewport', async ({
   }
 });
 
+test('hero entrance immediately honors a change to reduced motion', async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.goto('./');
+  const hero = page.locator('#Home');
+  await expect
+    .poll(() =>
+      hero.evaluate((element) =>
+        element
+          .getAnimations({ subtree: true })
+          .some((animation) => animation.playState === 'running')
+      )
+    )
+    .toBe(true);
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await expect
+    .poll(() =>
+      hero.evaluate(
+        (element) => element.getAnimations({ subtree: true }).length
+      )
+    )
+    .toBe(0);
+  await expect(page.getByRole('heading', { level: 1 })).toHaveCSS(
+    'opacity',
+    '1'
+  );
+  await expect(
+    hero.getByRole('link', { name: 'Explore my work' })
+  ).toBeVisible();
+  await expect(hero.locator('.portrait-frame')).toHaveCSS('opacity', '1');
+});
+
 test('reveals content on scroll and immediately honors reduced motion', async ({
   page,
 }) => {
